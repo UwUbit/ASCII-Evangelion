@@ -7,10 +7,6 @@ from ImageConverting import get_list
 from CreateDirectoryWithFrames import get_frames_from_video
 
 
-def clear_console():
-    os.system('cls' if os.name == 'nt' else 'clear')
-
-
 def main():
     keyboard = Controller()
     confirm_full_screen = input("Play in full screen? Y/n: ")
@@ -45,9 +41,25 @@ def main():
     # Display frames with FPS control
     fps = 30
     timer = fpstimer.FPSTimer(fps)
-    for frame in out_list:
-        clear_console()  # Clear screen before displaying new frame
-        print(frame, end='')  # Display current frame
+
+    # Initialize an empty previous frame for comparison
+    previous_frame = [''] * rows
+
+    # Loop through each frame
+    for current_frame in out_list:
+        # Split current frame into lines
+        current_frame_lines = current_frame.splitlines()
+
+        # Compare and print only the lines that have changed
+        for i, (old_line, new_line) in enumerate(zip(previous_frame, current_frame_lines)):
+            if old_line != new_line:
+                # Move cursor to the correct line and print the new line
+                print(f"\033[{i+1}0H{new_line}")
+
+        # Update the previous frame with the current frame's data
+        previous_frame = current_frame_lines.copy()
+
+        # Control FPS
         timer.sleep()
 
 
