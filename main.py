@@ -9,12 +9,12 @@ from CreateDirectoryWithFrames import get_frames_from_video
 
 if __name__ == "__main__":
     keyboard = Controller()
-    confirm_full_screen = input("Full screen? Y/n: ")
+    confirm_full_screen = input("Play in full screen? Y/n: ")
     if confirm_full_screen == 'Y':
         keyboard.press(Key.f11)
         keyboard.release(Key.f11)
 
-    confirm_frames = input("Need frames? Y/n: ")
+    confirm_frames = input("Create frames? Y/n: ")
     if confirm_frames == 'Y':
         get_frames_from_video()
 
@@ -33,14 +33,14 @@ if __name__ == "__main__":
     # calculating output
     out_list = []
     columns, rows = os.get_terminal_size()
-    print("Calculating output")
+    print("Calculating output...")
     for i in list_with_frame_names:
         out_list.append(get_list("frames/" + i[0], columns, rows))
-    print("done")
+    print("Done!")
     time.sleep(1)
 
     if confirm_sound == 'Y':
-        audio_file = f"{os.path.dirname(os.path.abspath(__file__))}\\bad_apple_audio.mp3"
+        audio_file = f"{os.path.dirname(os.path.abspath(__file__))}\\lost_soul_audio.mp3"
         playsound(audio_file, False)
 
     FPS = 30
