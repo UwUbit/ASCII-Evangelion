@@ -20,14 +20,14 @@ def main():
 
     confirm_sound = input("Play with sound? Y/n: ")
 
-    # Get list of frames
+    # Getting the list of frames
     directory = os.path.join(os.path.dirname(os.path.abspath(__file__)), "frames")
     list_with_frame_names = sorted(
         [(filename, int(filename[:-4])) for filename in os.listdir(directory) if filename.endswith(".jpg")],
         key=lambda x: x[1]
     )
 
-    # Get terminal size and calculate output frames
+    # Getting terminal size and calculating output frames
     columns, rows = os.get_terminal_size()
     print("Calculating output...")
     out_list = [get_list(os.path.join(directory, f[0]), columns, rows) for f in list_with_frame_names]
@@ -38,11 +38,11 @@ def main():
         audio_file = os.path.join(os.path.dirname(os.path.abspath(__file__)), "lost_soul_audio.mp3")
         playsound(audio_file, False)
 
-    # Display frames with FPS control
-    fps = 30
+    # Displaying frames with FPS control
+    fps = 90
     timer = fpstimer.FPSTimer(fps)
 
-    # Initialize an empty previous frame for comparison
+    # Initializing an empty previous frame for comparison
     previous_frame = [''] * rows
 
     # Loop through each frame
