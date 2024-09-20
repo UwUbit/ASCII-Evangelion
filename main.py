@@ -3,8 +3,8 @@ import os
 import fpstimer
 from playsound import playsound
 from pynput.keyboard import Key, Controller
-from image_converting import get_list
-from create_directory_with_frames import get_frames_from_video
+from ImageConverting import get_list
+from CreateDirectoryWithFrames import get_frames_from_video
 
 
 if __name__ == "__main__":
