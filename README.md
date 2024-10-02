@@ -5,7 +5,7 @@ I decided to make a fork of his project and make my own thing based on this [VID
 Also, please check the original work of my friend here -> [Repository](https://github.com/Koteikar/Bad-Apple),
 as well as his [VIDEO](https://youtu.be/ikyKLfB4cfg) on YouTube.
 
-![](images/git-preview-eva.gif)
+![](images/git_preview_eva.gif)
 
 ## Getting Started
 
