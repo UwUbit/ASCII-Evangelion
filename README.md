@@ -1,11 +1,11 @@
-# Bad Apple in terminal using Python
+# Evangelion opening in terminal using Python
 
 I have accidentally stumbled upon a GitHub profile of my dear friend, [Koteikar](https://github.com/Koteikar). Purely for fun,
 I decided to make a fork of his project and make my own thing based on this [VIDEO](https://youtu.be/oh0RQ_TgDnQ?si=SK5zS0XawRZSfmOp).
 Also, please check the original work of my friend here -> [Repository](https://github.com/Koteikar/Bad-Apple),
 as well as his [VIDEO](https://youtu.be/ikyKLfB4cfg) on YouTube.
 
-![](images/git-preview.gif)
+![](images/git-preview-eva.gif)
 
 ## Getting Started
 
